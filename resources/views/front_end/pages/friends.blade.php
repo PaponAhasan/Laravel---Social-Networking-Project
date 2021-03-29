@@ -154,7 +154,7 @@
                                                         <a href="#" title="">{{ $user->name }}</a>
                                                         <span>{{ $user->location }}</span>
                                                     </div>
-                                                    <a class="send-mesg" href="#" title="">Message</a>
+                                                    <a class="" href="{{ route("message.friend",$user->id) }}" title="">Message</a>
                                                 </div>
                                         </div>
                                       </div>

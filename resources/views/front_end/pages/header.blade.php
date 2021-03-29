@@ -62,7 +62,7 @@
        <div class="page-name">
             <span>About</span>
         </div>
-        <ul class="setting-area">
+        <ul class="">
             <li><a href="{{ route('home') }}" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
             <li>
                 <a href="" title="Friend Requests" data-ripple="">
@@ -78,8 +78,8 @@
                 </a>
                
             </li>
-            <li>
-                <a href="#" title="Messages" data-ripple=""><i class="fa fa-commenting"></i>
+           
+                <a href="{{ route('profile.friends') }}" title="Messages" data-ripple=""><i class="fa fa-commenting"></i>
                     {{-- <em class="bg-blue">9</em> --}}
                 </a>
                

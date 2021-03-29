@@ -15,6 +15,7 @@ class AddImageToCommentsTable extends Migration
     {
         Schema::table('comments', function (Blueprint $table) {
             $table->string('user_image')->nullable();
+            $table->text('body')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddImageToCommentsTable extends Migration
     {
         Schema::table('comments', function (Blueprint $table) {
             $table->dropColumn('user_image');
+            $table->dropColumn('body');
         });
     }
 }
