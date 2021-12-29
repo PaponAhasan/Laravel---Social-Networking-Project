@@ -60,7 +60,7 @@
                                             <figure>@if($user->image == '')
                                                 <img src="{{ asset('frontend/images\resources\paceholder1.jpg') }}" alt="user_image" width="50">
                                                 @else
-                                                <img src="{{ asset('storage/'.$user->image) }}" alt="user" width="50">   
+                                                <img src="{{ asset('storage/'.$Auth::user()->image) }}" alt="user" width="50">   
                                                 @endif
                                             </figure>
                                             <div class="text-box">

@@ -20,6 +20,12 @@
                                     <p>Sign Up Now And Meet The Awesome Friends Around The World.</p>
 
                                     <div class="logout-form">
+                                        @if (Session::has('success_message'))
+                                            <div class="alert alert-danger">
+                                                <strong>Invalid Email !! </strong>{{ Session()->get('success_message') }}
+                                            </div>
+                                        @endif
+                                        
                                         <form class="again-login" method="POST" action="{{ route('register') }}">
                                          @csrf
 

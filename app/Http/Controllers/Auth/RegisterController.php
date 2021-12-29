@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -64,10 +65,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $email = Str::substr($data['email'],11);
+    
+        if($email!="@cse.bubt.edu.bd"){
+           session()->flash('success_message','Must Use BUBT EMAIL');
+           //return $this->redirect()->route('register');
+            //return $this->redirect('/');
+            //dd("Email Invalid.Must Use BUBT EMAIL");
+        }
+        else{
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+        }
     }
+    
 }

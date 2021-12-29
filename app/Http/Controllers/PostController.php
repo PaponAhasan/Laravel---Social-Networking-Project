@@ -48,6 +48,10 @@ class PostController extends Controller
 
     public function deletePost(int $id){
         $posts = post::find($id);
+
+       // $image = $posts->image;
+        //unlink($image);
+
         $posts->delete();
         return redirect()->back();
     }
